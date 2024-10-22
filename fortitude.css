@@ -1,0 +1,467 @@
+*{
+    margin: 0%;
+    padding: 0%;
+ }
+body{
+    background-color:rgb(1, 1, 14);
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    
+}
+
+nav{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color:rgb(1, 1, 14);
+    padding: 22px;
+    box-shadow: 0px 2px 6px 2px rgb(31, 30, 30);
+    color: white;
+    z-index: 1;
+   
+    /* font-size: 18px; */
+}
+
+ul{
+    list-style-type: none;
+    background-color: black;
+    color: white;
+}
+
+ul li{
+    display: inline-block;
+    padding: 10px;
+}
+
+ul li:hover{
+    color: yellow;
+    text-decoration: underline;
+}
+
+ .dropdown{
+    display: none;
+}
+
+.dropdown li:hover{
+    text-decoration: none;
+    background-color: rgb(40, 40, 31);
+}
+ul li:hover .dropdown{
+    display: block;
+    position: absolute;
+    margin-left: -0.3cm;
+    margin-top: 5px;
+    
+}
+
+.dropdown ul{
+    margin: 0;
+    padding: 0;
+}
+.dropdown ul li{
+    display: block;
+
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    margin-inline: 12px;
+
+}
+
+nav ul{
+    margin-right: 2px;
+    margin-top: 10px;
+}
+
+ul li a:hover{
+    color: yellow;
+    border-bottom: 1px solid yellow;
+}
+
+ul li{
+    list-style: none;
+}
+
+ul li button{
+    /* text-decoration: none; */
+    width: 100px;
+    height: 50px;
+    margin-right: 40px;
+    font-size: 18px;
+    background-color: yellow;
+    cursor: pointer;
+}
+
+ul li button:hover{
+    background-color: transparent;
+    border: 2px solid yellow;
+    color: yellow;
+}
+
+.logo img{
+    width: 50%;
+    font-size: 30px;
+    color: yellow;
+    
+}
+
+
+
+
+/* main */
+.home{
+    display: flex;
+    justify-content: center;
+}
+.home h1{
+    
+    margin-left: -650px;
+    margin-top: 150px;
+    font-size: 100px;
+}
+.home span{
+    color: yellow;
+}
+.home button{
+    text-decoration: none;
+    margin-top: 35px;
+    margin-left: -650px;
+    background-color: yellow;
+    height: 60px;
+    width: 290px;
+    border: none;
+    font-size: 20px;
+}
+
+.home button:hover{
+    
+    background-color: transparent;
+    color: yellow;
+    border: 2px solid yellow;
+}
+
+.home img{
+    margin-top: 100px;
+    margin-left: 300px;
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    box-shadow: 0px 2px 6px 2px rgb(31, 30, 30) ;
+}
+
+/* prgram */
+ .head{
+    display: flex;
+    justify-content: center;
+}
+ .head h2{
+    margin-top: 80px;
+    font-size: 44px;
+}
+.head h2 span{
+    color: yellow;
+}
+.ourProgram{
+    display: flex;
+    justify-content: center;
+}
+
+.ourProgram .crd{
+    margin-top: 30px;
+    margin-inline: 30px;
+    text-align: center;
+}
+
+.ourProgram .crd img:hover{
+    width: 105%;
+}
+
+/* plans */
+.head{
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    margin-top: 40px;
+}
+
+.head h3 span{
+   color: yellow;
+}
+.ourPlan{
+    display: flex;
+    justify-content: center;
+}
+
+.ourPlan .card{
+    margin-top: 22px;
+    width: 300px;
+    height: 400px;
+    text-align: center;
+    margin-inline: 22px;
+    /* background-color: rgb(90, 89, 89); */
+    background-color: rgb(36, 35, 35);
+    padding: 4px;
+}
+
+.card i{
+    font-size: 22px;
+    margin-top: 22px;
+    color: orange;
+}
+
+.card h3{
+    margin-top: 22px;
+    color: yellow;
+    font-size: 20px;
+}
+
+.card h1{
+    margin-top: 22px;
+    color: yellow;
+}
+
+.card p{
+    margin-top: 12px;
+    color: silver;
+}
+
+.card button{
+    width: 130px;
+    height: 38px;
+    margin-top: 22px;
+    font-size: 18px;
+    background-color: orange;
+    color: white;
+}
+
+.card button:hover{
+    background-color: transparent;
+    border: 2px solid white ;
+    color: orange;
+    cursor: pointer;
+
+}
+
+.card:hover{
+    transition: 0.7s ease;
+    width: 310px;
+    height: 440px;
+    background-color: black;
+    font-size: 19px;
+    cursor: pointer;
+
+  }
+
+
+/* Trainers */
+
+/* .head{
+    
+    justify-content: center;
+    display: flex;
+}
+
+.ourTrainers{
+    
+    justify-content: center;
+    display: flex;
+}
+
+.crd{
+    margin-top: 44px;
+    position: relative;
+    max-width: 280px;
+    height: 200px;
+}
+
+.ourTrainers .crd .content h3{
+    color: black;
+    font-size: 25px;
+}
+
+.ourTrainers .crd .content {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.ourTrainers .crd:hover .content{
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.ourTrainers .crd .imgBx img{
+    z-index: 1;
+    position: relative;
+    border-radius: 10px;
+    padding: auto;
+    width: 250px;
+    height: 300px;
+    border: 2px grey solid;
+    bottom: 100px;
+    
+}
+
+.ourTrainers .crd .content{
+    z-index: 0;
+    position: relative;
+}
+.ourTrainers .crd{
+    margin-top: -90px;
+    border-radius: 15px;
+    text-align: center;
+    margin-inline: 22px;
+    width: 300px;
+    height: 300px;
+    color: black;
+
+}
+
+.ourTrainers .crd .imgBx img:hover{
+    transition: 0.5s ease-in-out;
+    margin-top: 100px;
+
+}
+.ourTrainers .crd:hover{
+    
+    background-color: yellow;
+    transition: 0.7s ease-in-out;
+    
+} */
+
+
+
+
+/* blogs */
+.head{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.ourBlog{
+    display: flex;
+    justify-content: center;
+}
+
+ .ourBlog .blogcrd{
+    width: 300px;
+    height: 400px;
+    margin-inline: 22px;
+    background-color:  rgb(36, 35, 35);
+}
+
+.blogcrd img{
+    width: 100%;
+}
+
+.blogcrd h3{
+    margin-top: 22px;
+}
+
+.blogcrd p{
+    margin-top: 22px;
+}
+.blogcrd:hover{
+    border: 1px solid white;
+}
+.blogcrd a{
+    text-decoration: none;
+    background-color: orange;
+    width: 90px;
+    padding: 11px;
+   position: absolute;
+   color: white;
+   font-size: 17px;
+   margin-top: 22px;
+   cursor: pointer;
+}
+
+.blogcrd a:hover{
+    background-color: transparent;
+    border: 2px solid white;
+    color: orange;
+    
+}
+
+.blogText{
+    margin-top: 11px;
+    margin-left: 10px;
+}
+
+/* Contact Us */
+.contactPage{
+    display: flex;
+    justify-content: center;
+}
+
+.contactText{
+    margin-left: 0px;
+    color: yellow;
+    margin-top: 134px;
+    font-size: 32px;
+
+}
+
+.contactPage img{
+    width: 60%;
+    margin-left: -33px;
+}
+
+.contactUs{
+    text-align: center;
+    margin-top: 22px;
+}
+
+.contactUs input{
+    width: 350px;
+    height: 33px;
+    padding: 8px;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    margin-top: 18px;
+    font-size: 22px;
+
+}
+
+.contactUs button{
+    width: 367px;
+    height: 45px;
+    margin-top: 22px;
+    font-size: 23px;
+    background-color: yellow;
+    border: none;
+    border-radius: 2px;
+}
+
+.contactUs button:hover{
+    background-color: transparent;
+    border: 2px solid yellow;
+    color: white;
+}
+
+/* footer */
+.footer{
+    display: flex;
+    justify-content: center;
+    margin-top: 53px;
+    padding: 22px;
+    box-shadow: 0px 2px 6px 4px rgb(36, 36, 36);
+}
+
+.footer .footerText{
+    margin-inline: 73px;
+    margin-top: 33px;
+}
+
+.footerText p{
+    margin-top: 11px;
+    color: silver;
+      }
+
+
+

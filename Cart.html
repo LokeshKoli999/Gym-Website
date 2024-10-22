@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="cart.css" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body style="background-color: white;">
+  <nav class="navbar navbar-expand-sm bg-black navbar-black fixed-top" >
+    <!--Brand/logo-->
+    <a class="navbar-brand" href="#">
+      <img src="logo.png" alt="logo" style="width: 200px;">
+    </a>
+    <!--Links-->
+    <ul  class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#menu-add">OUR MENU</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#cart">CHECK OUT</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">CONTACT</a>
+      </li>
+    </ul>
+  </nav>
+  
+  <div class="menu-add" id="menu-add">
+    <h1>Supplements Store</h1>
+    <!-- Dropdown Button -->
+    <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Filter
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#" onclick="selectOption('whey')">Whey</a>
+        <a class="dropdown-item" href="#" onclick="selectOption('creatine')">Creatine</a>
+        <a class="dropdown-item" href="#" onclick="selectOption('All')">All</a>
+      </div>
+      <!-- Selected Option Display -->
+      <span id="selectedOption"></span>
+    </div>
+    <!-- Suppliments Items -->
+    <div class="menu-container">
+      <div class="suppliment-item whey">
+        <img src="MB.jpg" alt="MB">
+        <h3>MuscleBlaze Biozyme Performance </h3>
+        
+        <p> ₹4,699</p>
+        <button onclick="addToCart('MuscleBlaze Biozyme Performance', 4699)">Add to Cart</button>
+      </div>
+
+      <div class="suppliment-item creatine">
+        <img src="WCC.jpg" alt="WCC">
+        <h3>Wellcore - Micronised Creatine Monohydrate</h3>
+     
+        <p>₹1199</p>
+        <button onclick="addToCart('Wellcore - Micronised Creatine Monohydrate', 1199)">Add to Cart</button>
+      </div>
+
+      <div class="suppliment-item whey">
+        <img src="BM.jpg" alt="Pepperoni Pizza">
+        <h3>Premium Gold Whey Protein</h3>
+       
+        <p>₹1,499</p>
+        <button onclick="addToCart('Premium Gold Whey Protein', 1499)">Add to Cart</button>
+      </div>
+
+      <div class="suppliment-item creatine">
+        <img src="BMC.jpg" alt="Non Veggie Pizza">
+        <h3>BigMuscles Creatine Monohydrate</h3>
+        
+        <p>₹399</p>
+        <button onclick="addToCart('BigMuscles Creatine Monohydrate', 399)">Add to Cart</button>
+      </div>
+
+      <div class="suppliment-item whey">
+        <img src="MP.jpg" alt="Pepperoni Pizza">
+        <h3>Impact Whey Protein</h3>
+     
+        <p>₹6199</p>
+        <button onclick="addToCart('Impact Whey Protein', 6199)">Add to Cart</button>
+      </div>
+
+      <div class="suppliment-item creatine">
+        <img src="ASC.jpg" alt="Non Veggie Pizza">
+        <h3>AS-IT-IS Nutrition Creatine Monohydrate</h3>
+     
+        <p>₹580</p>
+        <button onclick="addToCart('AS-IT-IS Nutrition Creatine Monohydrate', 580)">Add to Cart</button>
+      </div>
+
+      <div class="suppliment-item whey">
+        <img src="AVP.jpg.webp" alt="Pepperoni Pizza">
+        <h3>AVVATAR WHEY PROTEIN</h3>
+        
+        <p>₹4,999 </p>
+        <button onclick="addToCart('AVVATAR WHEY PROTEIN', 4999)">Add to Cart</button>
+      </div>
+
+      <div class="suppliment-item creatine">
+        <img src="MTC.jpg" alt="Non Veggie Pizza">
+        <h3>MUSCLETECH™ PLATINUM 100% CREATINE</h3>
+        
+        <p>₹999 </p>
+        <button onclick="addToCart('MUSCLETECH™ PLATINUM 100% CREATINE', 999)">Add to Cart</button>
+      </div>
+      
+      <div class="suppliment-item whey">
+        <img src="GNCP.jpg" alt="Pepperoni Pizza">
+        <h3>GNC Pro Performance </h3>
+
+        <p>₹4,599</p>
+        <button onclick="addToCart('GNC Pro Performance', 4599)">Add to Cart</button>
+      </div>
+
+      <div class="suppliment-item whey">
+        <img src="OPP.jpg" alt="Pepperoni Pizza">
+        <h3>Optimum Nutrition</h3>
+       
+        <p>₹6,038</p>
+        <button onclick="addToCart('Optimum Nutrition', 6038)">Add to Cart</button>
+      </div>
+      
+      
+    </div>
+  </div>
+  <!-- Cart Section -->
+  <div class="cart-container" id="cart">
+    <h2>Cart</h2>
+    <!-- Cart items will be displayed here -->
+    <div id="cart-items"></div>
+    <p id="totalAmount">Total: Rs. 0</p>
+    <!-- Checkout button always visible -->
+    <button id="checkoutBtn" onclick="checkout()">Checkout</button>
+  </div>
+  
+  
+<!-- Footer Section Start -->
+<footer class="footer">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <div class="footer-logo">
+          <a href="" class="logo-image">
+            <img 
+              srcset="logo.png 1x, img/Logo@2x.png 2x, img/Logo@3x.png 3x" 
+              src="logo.png"
+            />
+          </a><br>
+        </div>
+        <div class="footer-text">
+          <p>Thank You For Visiting Our Website..!</p>
+        </div>
+        <div class="footer-social-links">
+          <a href=""><i class="fab fa-facebook-f"></i></a>
+          <a href=""><i class="fab fa-twitter"></i></a>
+          <a href=""><i class="fab fa-instagram"></i></a>
+          <a href=""><i class="fab fa-linkedin-in"></i></a>
+          <a href=""><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      
+      <p>Project Submitted By - Lokesh Baviskar</p>
+      <p>Email : lokeshbaviskar3@gmail.com</p>
+    </div>
+  </div>
+</footer>
+<!-- Footer Section End -->
+
+<script>
+function selectOption(option) {
+  document.getElementById("selectedOption").textContent = option;
+  // Show all items initially
+  const pizzaItems = document.querySelectorAll('.suppliment-item');
+  pizzaItems.forEach(item => {
+    item.style.display = 'block';
+  });
+
+  // Filter items based on selected option
+  if (option === 'whey') {
+    const nonVegItems = document.querySelectorAll('suppliment-item.creatine');
+    nonVegItems.forEach(item => {
+      item.style.display = 'none';
+    });
+  } else if (option === 'creatine') {
+    const vegItems = document.querySelectorAll('.suppliment-item.whey');
+    vegItems.forEach(item => {
+      item.style.display = 'none';
+    });
+  }
+}
+
+let cartItems = [];
+
+function addToCart(itemName, price) {
+  // Check if the item already exists in the cart
+  const existingItem = cartItems.find(item => item.name === itemName);
+  if (existingItem) {
+    // If the item exists, update the quantity and amount
+    existingItem.quantity++;
+    existingItem.amount += price;
+  } else {
+    // If the item doesn't exist, add it to the cart
+    cartItems.push({ name: itemName, price: price, quantity: 1, amount: price });
+  }
+  updateCart();
+}
+
+function updateCart() {
+  const cartElement = document.getElementById('cart-items');
+  const totalElement = document.getElementById('totalAmount');
+  cartElement.innerHTML = '';
+  let totalAmount = 0;
+  cartItems.forEach(item => {
+    const itemElement = document.createElement('div');
+    itemElement.classList.add('cart-item');
+    itemElement.innerHTML = `<p>${item.name} - Rs.${item.price} (Qty: ${item.quantity}, Amt: Rs.${item.amount})</p>`;
+    cartElement.appendChild(itemElement);
+    totalAmount += item.amount;
+  });
+  totalElement.textContent = `Total: Rs. ${totalAmount}`;
+
+  // Show checkout button
+  const checkoutBtn = document.getElementById('checkoutBtn');
+  checkoutBtn.style.display = 'block';
+}
+
+function checkout() {
+  alert('Thank you for your purchase!');
+  cartItems = [];
+  updateCart();
+}
+</script>
+
+</body>
+</html>
